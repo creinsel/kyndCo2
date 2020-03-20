@@ -1,0 +1,31 @@
+{
+  "name": "MERN-template",
+  "version": "1.0.0",
+  "description": "MERN template.  Create-react-app + Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "minimist": "^1.2.5",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.4",
+    "react-bootstrap": "^1.0.0-beta.17",
+    "react-router-dom": "^5.1.2"
+  }
+}
